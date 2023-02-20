@@ -1,8 +1,12 @@
 import React from "react";
-import "./App.css";
+import MetaMask from "./MetaMask";
 
 function App() {
-  return <div className="App">dd</div>;
+  return (
+    <div className="App">
+      <MetaMask />
+    </div>
+  );
 }
 
 export default App;
