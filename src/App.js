@@ -17,7 +17,7 @@ function App() {
         user: null,
       });
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">

@@ -16,9 +16,6 @@ const MetaMask = () => {
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
           accountChanged([result[0]]);
-          localStorage.setItem("token", result);
-
-          console.log(result);
         });
     } else {
       setErrorMessage("Install MetaMask please!");
@@ -34,7 +31,6 @@ const MetaMask = () => {
       })
       .then((balance) => {
         setUserBalance(ethers.formatEther(balance));
-        console.log("result", balance);
       });
   };
 
@@ -45,6 +41,7 @@ const MetaMask = () => {
       type: "SET_USER",
       user: accountName,
     });
+    localStorage.setItem("token", accountName);
   };
 
   return (
@@ -52,7 +49,7 @@ const MetaMask = () => {
       <h1>MetaMask Wallet Connection</h1>
 
       <button onClick={connectwallet}>Connect Wallet</button>
-      <h3>Address: {user}</h3>
+      <h3>Address: {user ? user : "없음"}</h3>
       <h3>Balance: {userBalance}</h3>
       {errorMessage}
     </div>
