@@ -49,7 +49,7 @@ const MetaMask = () => {
       <h1>MetaMask Wallet Connection</h1>
 
       <button onClick={connectwallet}>Connect Wallet</button>
-      <h3>Address: {user ? user : "없음"}</h3>
+      <h3>Address: {user ? <span> {user.slice(0, 5)}...</span> : "없음"}</h3>
       <h3>Balance: {userBalance}</h3>
       {errorMessage}
     </div>
