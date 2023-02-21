@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ethers } from "ethers";
 import { useStateValue } from "./StateProvider";
 
+import "./App.css";
+
 const MetaMask = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -49,7 +51,7 @@ const MetaMask = () => {
       <h1>MetaMask Wallet Connection</h1>
 
       <button onClick={connectwallet}>Connect Wallet</button>
-      <h3>Address: {user ? <span> {user.slice(0, 5)}...</span> : "없음"}</h3>
+      <h3>Address: {user ? <span> {user}...</span> : "없음"}</h3>
       <h3>Balance: {userBalance}</h3>
       {errorMessage}
     </div>
