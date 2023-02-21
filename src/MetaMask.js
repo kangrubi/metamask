@@ -30,7 +30,7 @@ const MetaMask = () => {
     window.ethereum
       .request({
         method: "eth_getBalance",
-        params: [String(accountAddress)],
+        params: [String(accountAddress), "latest"],
       })
       .then((balance) => {
         setUserBalance(ethers.formatEther(balance));
